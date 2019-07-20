@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ExtractinfoService } from '../extractinfo.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import { DatabaseService } from '../database.service';
 
 
 
@@ -28,7 +29,7 @@ sideeffects: any[];
 displayedColumns = ['position', 'name', 'weight', 'symbol'];
 displayedColumnsSideEffects : string[] = ["No.", "Name", "Frequency"];
 
-constructor(private _extractinfo: ExtractinfoService) {
+constructor(private _extractinfo: DatabaseService) {
     
    }
 
@@ -37,9 +38,7 @@ constructor(private _extractinfo: ExtractinfoService) {
   //["name", "age", "species", "occupation"]  this.characters = this.atService.getCharacters();
   //all data in mock-data.ts
   // this.characters = this._extractinfo.getCharacters();
-  
-  this.dataSource = this._extractinfo.getCharacters();
-  this.sideeffects = this._extractinfo.getSideeffectsData();
+
 
   }
 }
