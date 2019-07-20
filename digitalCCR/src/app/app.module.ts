@@ -9,6 +9,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthStateService } from './auth-state.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
