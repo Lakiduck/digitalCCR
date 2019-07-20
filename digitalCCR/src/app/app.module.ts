@@ -9,6 +9,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthStateService } from './auth-state.service';
+import { RoutingModule } from './routing/routing.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AuthStateService } from './auth-state.service';
     CustomMaterialModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    RoutingModule
   ],
   providers: [DatabaseService, AuthStateService],
   bootstrap: [AppComponent]
