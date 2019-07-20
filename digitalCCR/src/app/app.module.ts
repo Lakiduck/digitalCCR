@@ -3,16 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
+import { DisplayinfoComponent } from './displayinfo/displayinfo.component';
+import { ExtractinfoService } from './extractinfo.service';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DisplayinfoComponent
   ],
   imports: [
     BrowserModule,
     CustomMaterialModule
   ],
-  providers: [],
+  providers: [ExtractinfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
