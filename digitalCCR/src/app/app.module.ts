@@ -11,6 +11,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthStateService } from './auth-state.service';
 import { RoutingModule } from './routing/routing.module';
 import { LoginComponent } from './login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginComponent } from './login/login.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    RoutingModule
+    RoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [DatabaseService, AuthStateService],
   bootstrap: [AppComponent]
