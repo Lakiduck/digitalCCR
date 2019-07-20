@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthStateService } from '../auth-state.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { AuthStateService } from '../auth-state.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private AuthState: AuthStateService) { }
+  constructor(private AuthState: AuthStateService, private router: Router) { }
 
   ngOnInit() {
   }

@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthStateService } from './auth-state.service';
 import { RoutingModule } from './routing/routing.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
