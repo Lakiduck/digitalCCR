@@ -1,0 +1,19 @@
+{
+  "name": "digitalccr",
+  "version": "1.0.0",
+  "description": "Digital Cancer Care Record",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lakiduck/digitalCCR.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lakiduck/digitalCCR/issues"
+  },
+  "homepage": "https://github.com/Lakiduck/digitalCCR#readme"
+}
