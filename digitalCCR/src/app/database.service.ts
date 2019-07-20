@@ -28,7 +28,7 @@ export class DatabaseService {
   }
 
   getMedicationByName(name: string){
-    return this.firestore.collection('patients', ref => ref.where('name', '==', name))
+    return this.firestore.collection('medication', ref => ref.where('name', '==', name))
     .snapshotChanges().pipe(map(actions => actions.map(a => ({ data: a.payload.doc.data() }))));
   }
 
