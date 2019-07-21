@@ -47,4 +47,12 @@ export class AuthStateService {
 
         return (this.authState['displayName'] || 'User without a Name');
     }
+
+    get currentUid(): string {
+        if (!this.authState){
+            return null;
+        }
+        return this.authState['uid'];
+    }
+
 }

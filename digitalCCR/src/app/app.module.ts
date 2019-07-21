@@ -16,12 +16,16 @@ import { RoutingModule } from './routing/routing.module';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthGuard } from './auth.guard';
+import { MatIconModule, MatMenuModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayinfoComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -30,10 +34,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     AngularFireAuthModule,
     AngularFirestoreModule,
     RoutingModule,
+    MatIconModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule
   ],
-  providers: [DatabaseService, AuthStateService],
+  providers: [DatabaseService, AuthStateService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

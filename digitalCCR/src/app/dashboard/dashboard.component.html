@@ -1,0 +1,44 @@
+<div (click)="logout()">Logout</div>
+<div class="maincontainer" [class.mobile-container]="!isDesktop">
+    <mat-toolbar color="primary" class="toolbar">
+        <h1 class="mat-h1 inlineblock">{{title}}</h1>
+        <span class="spacer"></span>
+        <div class="floatright inlineblock">
+            {{userData.first_name}} {{userData.last_name}}
+        </div>
+    </mat-toolbar>
+    <mat-sidenav-container class="sidenavcontainer" [style.marginTop.px]="56">
+        <mat-sidenav #sidenav class="sidenav" [(opened)]="opened" [(mode)]="mode" fixedTopGap="56" [fixedInViewport]="false">
+            <div class="navitem">
+                <mat-icon></mat-icon>
+                <span class="navtext">Home</span>
+            </div>
+            <div (click)="logout()" class="navitem">
+                <mat-icon></mat-icon>
+                <span class="navtext">Logout</span>
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content class="sidenav-content-container">
+            <div class="grid-container">
+
+                <mat-grid-list cols="1" rowHeight="100px">
+                    <ng-container *ngFor="let card of cards">
+                        <mat-grid-tile [colspan]="1" [rowspan]="1" *ngIf="!card.hidden">
+                            <mat-card class="fullwidthcard">
+                                <mat-card-header>
+                                    <mat-card-title class="boldtext">
+                                        {{card.data.title}}
+                                    </mat-card-title>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    {{card.data.date.seconds * 1000 | date:'dd/MM/yyyy(EEE) - hh:mmaaa'}}
+                                </mat-card-content>
+                            </mat-card>
+                        </mat-grid-tile>
+                    </ng-container>
+                </mat-grid-list>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>
