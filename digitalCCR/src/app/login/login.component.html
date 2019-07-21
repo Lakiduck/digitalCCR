@@ -1,18 +1,18 @@
-<html>
-<head>
-  <title>My Digital CCR</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Username" formControlName="email">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" formControlName="password">
-        </mat-form-field>
-        <button mat-raised-button color="primary">Login</button>
-        <button mat-button color="primary">Cancel</button>
-    </form>
-</body>
-</html>
+<div class="login-container">
+    <mat-card class="centre">
+        <mat-card-title>Login</mat-card-title>
+        <img class="midicon" src="assets/logo.png" />
+        <form class="flex" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+            <mat-form-field>
+                <input type="email" matInput placeholder="E-mail" formControlName="email">
+            </mat-form-field>
+            <mat-form-field>
+                <input type="password" matInput placeholder="Password" formControlName="password">
+            </mat-form-field>
+            <button mat-stroked-button color="primary" type="submit" [disabled]="!loginForm.valid || loading">Login</button>
+            <div [style.visibility]="loading?'visible':'hidden'" class="margintop10">
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </div>
+        </form>
+    </mat-card>
+</div>
